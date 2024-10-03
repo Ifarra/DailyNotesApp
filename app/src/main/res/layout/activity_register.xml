@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:hint="Type your Email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/darkpurple"
+            android:textColor="@color/black"
             app:boxStrokeColor="@color/darkpurple"
             app:hintTextColor="#9C7474" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:hint="Type Your Password"
             android:inputType="textPassword"
-            android:textColor="@color/darkpurple"
+            android:textColor="@color/black"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/darkpurple" />
     </com.google.android.material.textfield.TextInputLayout>
