@@ -26,6 +26,7 @@ class NotesAdapter(
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(note: Note, clickListener: (Note) -> Unit, longClickListener: (Note) -> Unit) {
             itemView.findViewById<TextView>(R.id.tvNoteTitle).text = note.title
+            itemView.findViewById<TextView>(R.id.tvNoteContent).text = note.content // Bind content
             itemView.setOnClickListener { clickListener(note) }
             itemView.setOnLongClickListener {
                 longClickListener(note)

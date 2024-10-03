@@ -1,25 +1,70 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#FAF7F0">
+
+    <LinearLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:background="@drawable/navrem"
+        android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/logout"
+            android:src="@drawable/back"
+            app:backgroundTint="#E69C9C" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSaveNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:contentDescription="@string/addnote"
+            android:src="@drawable/save"
+            android:tint="#F8F5EE"
+            app:backgroundTint="#E69C9C"
+            app:rippleColor="#F8F5EE" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/etNoteTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Note Title"/>
+        android:layout_below="@id/navbar"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_weight="20"
+        android:hint="Note Title"
+        android:textColor="@color/black"
+         />
 
     <EditText
         android:id="@+id/etNoteContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Note Content"/>
+        android:hint="Note Content"
 
-    <Button
-        android:id="@+id/btnSaveNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save Note"/>
-</LinearLayout>
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@id/etNoteTitle"
+        android:textColor="@color/black"/>
+
+
+
+</RelativeLayout>

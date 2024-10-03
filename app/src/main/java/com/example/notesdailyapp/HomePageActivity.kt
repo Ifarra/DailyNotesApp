@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomePageActivity : AppCompatActivity() {
 
@@ -30,27 +31,23 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home_page)
 
         // Setup RecyclerView and other components...
-
         notesAdapter = NotesAdapter(notesList, { note -> editNote(note) }, { note -> showDeleteConfirmationDialog(note) })
 
-
-        // Setup Toolbar
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        findViewById<ImageButton>(R.id.btnLogout).setOnClickListener {
+        // Logout button click listener
+        findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.btnLogout).setOnClickListener {
             logout()
         }
 
         firestore = FirebaseFirestore.getInstance()
 
-
+        // Setup RecyclerView
         findViewById<RecyclerView>(R.id.recyclerView).apply {
             layoutManager = LinearLayoutManager(this@HomePageActivity)
             adapter = notesAdapter
         }
 
-        findViewById<Button>(R.id.btnAddNote).setOnClickListener {
+        // FAB click listener
+        findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.btnAddNote).setOnClickListener {
             startActivity(Intent(this, EditNoteActivity::class.java))
         }
 

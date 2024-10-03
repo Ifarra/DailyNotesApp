@@ -1,5 +1,6 @@
 package com.example.notesdailyapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,7 +31,11 @@ class EditNoteActivity : AppCompatActivity() {
             loadNote()
         }
 
-        findViewById<Button>(R.id.btnSaveNote).setOnClickListener {
+        findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.btnBack).setOnClickListener {
+            finish()
+        }
+
+        findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.btnSaveNote).setOnClickListener {
             saveNote()
         }
     }
